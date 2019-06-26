@@ -1,0 +1,140 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://GameController.gd" type="Script" id=1]
+[ext_resource path="res://SwipeDetector.gd" type="Script" id=2]
+[ext_resource path="res://fonts/Comfortaa-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Card.gd" type="Script" id=4]
+[ext_resource path="res://icon.png" type="Texture" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 96
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 56
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 56
+font_data = ExtResource( 3 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 146.727, 259.28 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 28
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 24
+font_data = ExtResource( 3 )
+
+[node name="SwipeCardMain" type="Node"]
+script = ExtResource( 1 )
+
+[node name="SwipeDetector" type="Node" parent="."]
+script = ExtResource( 2 )
+
+[node name="Timer" type="Timer" parent="SwipeDetector"]
+one_shot = true
+
+[node name="ColorRight" type="ColorRect" parent="."]
+margin_left = 288.0
+margin_right = 576.0
+margin_bottom = 1024.0
+color = Color( 0.945098, 1, 0, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ColorLeft" type="ColorRect" parent="."]
+margin_right = 289.0
+margin_bottom = 1024.0
+color = Color( 1, 0, 0, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ALabel" type="Label" parent="."]
+margin_left = 141.35
+margin_top = 156.0
+margin_right = 208.35
+margin_bottom = 264.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 0.984314, 0, 1 )
+text = "A"
+
+[node name="AnLabel" type="Label" parent="."]
+margin_left = 304.0
+margin_top = 156.0
+margin_right = 436.0
+margin_bottom = 264.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "An"
+
+[node name="ScoreLabel" type="Label" parent="."]
+anchor_right = 1.0
+margin_left = 337.0
+margin_top = 30.0
+margin_right = -25.0
+margin_bottom = 94.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "Scores "
+align = 2
+
+[node name="LevelLabel" type="Label" parent="."]
+margin_left = 20.0
+margin_top = 30.0
+margin_right = 186.0
+margin_bottom = 94.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.945098, 1, 0, 1 )
+text = "Level "
+
+[node name="Card" type="KinematicBody2D" parent="."]
+position = Vector2( 144, 256 )
+script = ExtResource( 4 )
+
+[node name="ColorRect" type="ColorRect" parent="Card"]
+margin_right = 288.0
+margin_bottom = 512.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Card"]
+position = Vector2( 142.76, 259.12 )
+z_index = 1
+shape = SubResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="Card"]
+position = Vector2( 144, 156 )
+z_index = 1
+texture = ExtResource( 5 )
+
+[node name="CardName" type="Label" parent="Card"]
+margin_left = 10.0
+margin_top = 304.0
+margin_right = 284.0
+margin_bottom = 336.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Name"
+align = 1
+
+[node name="CardSpellName" type="Label" parent="Card"]
+margin_left = 12.0
+margin_top = 356.0
+margin_right = 282.0
+margin_bottom = 384.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "SpellName"
+align = 1
+
+[node name="Timer" type="Timer" parent="Card"]
+wait_time = 0.4
+one_shot = true
+
+[connection signal="check_answer" from="SwipeDetector" to="Card" method="_on_SwipeDetector_check_answer"]
+[connection signal="correct_answer" from="Card" to="." method="_on_Card_correct_answer"]
+[connection signal="timeout" from="Card/Timer" to="Card" method="_on_Timer_timeout"]
