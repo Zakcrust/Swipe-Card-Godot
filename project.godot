@@ -29,6 +29,10 @@ window/handheld/orientation="portrait"
 window/stretch/mode="viewport"
 window/stretch/aspect="keep_width"
 
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"

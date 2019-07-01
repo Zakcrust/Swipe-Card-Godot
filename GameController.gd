@@ -10,8 +10,8 @@ var level = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	scoreLabel = get_node("ScoreLabel")
-	levelLabel = get_node("LevelLabel")
+	scoreLabel = get_node("Sprite/ScoreLabel")
+	levelLabel = get_node("Sprite/LevelLabel")
 	_setScore()
 
 func _setScore():
