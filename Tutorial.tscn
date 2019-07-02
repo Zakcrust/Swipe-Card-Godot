@@ -37,7 +37,7 @@ color = Color( 0, 0, 0, 0.784314 )
 
 [node name="Sprite" type="Sprite" parent="ColorRect"]
 pause_mode = 2
-position = Vector2( 244.486, 412 )
+position = Vector2( 288, 412 )
 texture = ExtResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect"]

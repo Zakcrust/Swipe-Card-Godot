@@ -92,8 +92,7 @@ func _setImg(name):
 #return the name of the card based on randomized number between -1 and 14
 func _randomCard():
 	while(cardFlag[str(id)] == true):
-		for i in range(floor(rand_range(1,5))):
-			id = floor(rand_range(1, 99))
+		id = floor(rand_range(1, 99))
 	currentNumber = id
 	print(id)
 	return cardList[str(id)]
