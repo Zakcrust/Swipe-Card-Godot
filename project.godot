@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="SwipeCard_2"
-run/main_scene="res://SwipeCardMain.tscn"
+run/main_scene="res://SwipeCard/SwipeCardMain.tscn"
 config/icon="res://icon.png"
 
 [display]

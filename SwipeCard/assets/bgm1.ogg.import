@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bgm1.ogg-4fa54fdb6c4d5e8547f964e396ac5d7b.oggstr"
+
+[deps]
+
+source_file="res://SwipeCard/assets/bgm1.ogg"
+dest_files=[ "res://.import/bgm1.ogg-4fa54fdb6c4d5e8547f964e396ac5d7b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

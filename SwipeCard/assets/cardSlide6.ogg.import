@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/cardSlide6.ogg-243ab4f08423a1678f86a2b142cddcb0.oggstr"
+
+[deps]
+
+source_file="res://SwipeCard/assets/cardSlide6.ogg"
+dest_files=[ "res://.import/cardSlide6.ogg-243ab4f08423a1678f86a2b142cddcb0.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
